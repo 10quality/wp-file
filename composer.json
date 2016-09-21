@@ -1,6 +1,6 @@
 
 {
-    "name": "wp-file",
+    "name": "10quality/wp-file",
     "description": "Small class library that facilitates file handling in Wordpress.",
     "license": "MIT",
     "keywords": ["wordpress","filesystem","file"],
