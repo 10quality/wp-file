@@ -1,5 +1,9 @@
 # Wordpress File (wrapper class)
 
+[![Latest Stable Version](https://poser.pugx.org/10quality/wp-file/v/stable)](https://packagist.org/packages/10quality/wp-file)
+[![Total Downloads](https://poser.pugx.org/10quality/wp-file/downloads)](https://packagist.org/packages/10quality/wp-file)
+[![License](https://poser.pugx.org/10quality/wp-file/license)](https://packagist.org/packages/10quality/wp-file)
+
 This small class library facilitates file handling for Wordpress custom developments, will provide all functionality to meet Wordpress' standards.
 
 Features:
@@ -77,3 +81,13 @@ $file->rmdir( $path );
 ### Recomendations
 
 Store your files in the `uploads` folder.
+
+## Coding guidelines
+
+PSR-4.
+
+## LICENSE
+
+The MIT License (MIT)
+
+Copyright (c) 2016 [10Quality](http://www.10quality.com).
