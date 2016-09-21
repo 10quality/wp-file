@@ -1,0 +1,29 @@
+
+{
+    "name": "wp-file",
+    "description": "Small class library that facilitates file handling in Wordpress.",
+    "license": "MIT",
+    "keywords": ["wordpress","filesystem","file"],
+    "authors": [
+        {
+            "name": "Alejandro Mostajo",
+            "email": "amostajo@gmail.com"
+        },
+        {
+            "name": "10 Quality",
+            "email": "info@10quality.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.4.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "TenQuality\\WP\\": "src"
+        }
+    },
+    "minimum-stability": "dev"
+}
