@@ -10,20 +10,20 @@ namespace TenQuality\WP;
  * @author Alejandro Mostajo <info@10quality.com>
  * @license MIT
  * @package Wordpress\FileSystem
- * @version 1.0.0
+ * @version 0.9.1
  */
 class File
 {
     /**
      * Flag that indicates whether or not file has been authenticated.
-     * @since 1.0.0
+     * @since 0.9.0
      * @var bool
      */
     protected $authenticated = false;
 
     /**
      * Default constructor.
-     * @since 1.0.0
+     * @since 0.9.0
      */
     public function __construct()
     {
@@ -33,7 +33,7 @@ class File
     /**
      * Returns self | File object with authentication process done.
      * Static constructor.
-     * @since 1.0.0
+     * @since 0.9.0
      *
      * @param string $url Url to authenticate with.
      *
@@ -48,7 +48,7 @@ class File
 
     /**
      * Authenticates with wordpress and validates filesystem credentials.
-     * @since 1.0.0
+     * @since 0.9.0
      *
      * @param string $url Url to authenticate with.
      */
@@ -70,7 +70,7 @@ class File
     /**
      * Reads and checks if filename exists.
      * Returns readed file.
-     * @since 1.0.0
+     * @since 0.9.0
      *
      * @global $wp_filesytem
      *
@@ -87,7 +87,7 @@ class File
 
     /**
      * Writes content in a file.
-     * @since 1.0.0
+     * @since 0.9.0
      *
      * @global $wp_filesytem
      *
@@ -107,13 +107,13 @@ class File
 
     /**
      * Returns flag indicating if path is a directory or not.
-     * @since 1.0.0
+     * @since 0.9.0
      *
      * @global $wp_filesytem
      *
      * @param string $path Path to validate.
      *
-     * @return string
+     * @return bool
      */
     public function is_dir( $path )
     {
@@ -124,7 +124,7 @@ class File
 
     /**
      * Creates folder path.
-     * @since 1.0.0
+     * @since 0.9.0
      *
      * @global $wp_filesytem
      *
@@ -139,7 +139,7 @@ class File
 
     /**
      * Removes folder path and contents.
-     * @since 1.0.0
+     * @since 0.9.0
      *
      * @global $wp_filesytem
      */
@@ -151,8 +151,25 @@ class File
     }
 
     /**
+     * Returns flag indicating if filename exists.
+     * @since 0.9.1
+     *
+     * @global $wp_filesytem
+     *
+     * @param string $filename File name or file path.
+     *
+     * @return bool
+     */
+    public function is_file( $filename )
+    {
+        if (!$this->authenticated) return false;
+        global $wp_filesystem;
+        return $wp_filesystem->is_file( $filename );
+    }
+
+    /**
      * Displays wordpress notice.
-     * @since 1.0.0
+     * @since 0.9.0
      */
     public function admin_notice()
     {

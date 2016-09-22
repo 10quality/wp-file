@@ -35,4 +35,8 @@ class WP_Filesystem
     public function rmdir($path) {
         return @rmdir($path);
     }
+
+    public function is_file($filename) {
+        return @is_file($filename);
+    }
 }

@@ -64,7 +64,13 @@ If you need to authenticate a specific url, pass it like this:
 File::auth( $url )->read( $filename );
 ```
 
-### Folder handling
+### Other methods
+
+```php
+$isFile = File::auth()->is_file( $filename );
+```
+
+### Folder or Path handling
 
 Methods to handle files:
 ```php
