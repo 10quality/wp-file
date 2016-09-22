@@ -73,4 +73,14 @@ class FileTest extends PHPUnit_Framework_TestCase
         // Assert
         $this->assertTrue(is_bool($file->is_file(TMP_PATH.'/test.txt')));
     }
+    /**
+     * Tests id_dir.
+     */
+    public function testExists()
+    {
+        // Prepare
+        $file = File::auth();
+        // Assert
+        $this->assertTrue(is_bool($file->exists(TMP_PATH.'/test.txt')));
+    }
 }

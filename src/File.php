@@ -151,7 +151,7 @@ class File
     }
 
     /**
-     * Returns flag indicating if filename exists.
+     * Returns flag indicating if filename is a file.
      * @since 0.9.1
      *
      * @global $wp_filesytem
@@ -165,6 +165,23 @@ class File
         if (!$this->authenticated) return false;
         global $wp_filesystem;
         return $wp_filesystem->is_file( $filename );
+    }
+
+    /**
+     * Returns flag indicating if filename exists.
+     * @since 0.9.1
+     *
+     * @global $wp_filesytem
+     *
+     * @param string $filename File name or file path.
+     *
+     * @return bool
+     */
+    public function exists( $filename )
+    {
+        if (!$this->authenticated) return false;
+        global $wp_filesystem;
+        return $wp_filesystem->exists( $filename );
     }
 
     /**

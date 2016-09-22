@@ -67,7 +67,10 @@ File::auth( $url )->read( $filename );
 ### Other methods
 
 ```php
+// Returns bool
 $isFile = File::auth()->is_file( $filename );
+// Returns bool
+$fileExists = File::auth()->exists( $filename );
 ```
 
 ### Folder or Path handling

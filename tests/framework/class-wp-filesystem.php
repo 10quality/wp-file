@@ -39,4 +39,8 @@ class WP_Filesystem
     public function is_file($filename) {
         return @is_file($filename);
     }
+
+    public function exists($filename) {
+        return @file_exists($filename);
+    }
 }
