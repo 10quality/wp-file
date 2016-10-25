@@ -10,7 +10,7 @@ namespace TenQuality\WP;
  * @author Alejandro Mostajo <info@10quality.com>
  * @license MIT
  * @package Wordpress\FileSystem
- * @version 0.9.1
+ * @version 0.9.2
  */
 class File
 {
@@ -49,6 +49,7 @@ class File
     /**
      * Authenticates with wordpress and validates filesystem credentials.
      * @since 0.9.0
+     * @since 0.9.2 Bug fix for when functions are not loaded.
      *
      * @param string $url Url to authenticate with.
      */
@@ -56,7 +57,9 @@ class File
     {
         if ( empty( $url ) )
             $url = site_url() . '/wp-admin/';
-        if ( \get_filesystem_method() === 'direct' ) {
+        if ( !function_exists( 'get_filesystem_method' ) )
+            require_once(get_wp_home_path().'/wp-admin/includes/file.php');
+        if ( get_filesystem_method() === 'direct' ) {
             $creds = request_filesystem_credentials( $url, '', false, false, array() );
             if ( ! WP_Filesystem( $creds ) ) {
                 $this->authenticated = false;
