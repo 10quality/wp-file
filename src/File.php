@@ -10,7 +10,7 @@ namespace TenQuality\WP;
  * @author Alejandro Mostajo <info@10quality.com>
  * @license MIT
  * @package Wordpress\FileSystem
- * @version 0.9.3
+ * @version 0.9.4
  */
 class File
 {
@@ -50,6 +50,7 @@ class File
      * Authenticates with wordpress and validates filesystem credentials.
      * @since 0.9.0
      * @since 0.9.2 Bug fix for when functions are not loaded.
+     * @since 0.9.4 Bug fix missing "submit_button".
      *
      * @param string $url Url to authenticate with.
      */
@@ -57,11 +58,15 @@ class File
     {
         if ( empty( $url ) )
             $url = site_url() . '/wp-admin/';
-        if ( !function_exists( 'get_filesystem_method' ) )
-            require_once(get_wp_home_path().'/wp-admin/includes/file.php');
+        if ( ! function_exists( 'get_filesystem_method' ) )
+            require_once( get_wp_home_path().'/wp-admin/includes/file.php' );
+        if ( ! function_exists( 'submit_button' ) )
+            require_once( get_wp_home_path().'/wp-admin/includes/template.php' );
         if ( get_filesystem_method() === 'direct' ) {
+            ob_start();
             $creds = request_filesystem_credentials( $url, '', false, false, array() );
-            if ( ! WP_Filesystem( $creds ) ) {
+            $html = ob_get_clean();
+            if ( ! WP_Filesystem( $creds ) || ! empty( $html ) ) {
                 $this->authenticated = false;
             }   
             $this->authenticated = true;

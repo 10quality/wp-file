@@ -20,3 +20,8 @@ function site_url()
 {
     return 'http://localhost';
 }
+
+function submit_button()
+{
+    return '<button></button>';
+}
