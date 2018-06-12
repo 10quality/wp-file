@@ -10,7 +10,7 @@ namespace TenQuality\WP;
  * @author Alejandro Mostajo <info@10quality.com>
  * @license MIT
  * @package Wordpress\FileSystem
- * @version 0.9.2
+ * @version 0.9.3
  */
 class File
 {
@@ -91,6 +91,7 @@ class File
     /**
      * Writes content in a file.
      * @since 0.9.0
+     * @since 0.9.3 Fixes undefined constant FS_CHMOD_FILE.
      *
      * @global $wp_filesytem
      *
@@ -104,7 +105,7 @@ class File
         return $wp_filesystem->put_contents(
             $filename,
             $content,
-            FS_CHMOD_FILE
+            defined( FS_CHMOD_FILE ) ? FS_CHMOD_FILE : ( 0644 & ~ umask() )
         );
     }
 
