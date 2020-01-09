@@ -4,7 +4,7 @@ namespace TenQuality\WP;
 
 /**
  * File class.
- * Enables file handling functionality for Wordpress customization projects.
+ * Enables file handling functionality for WordPress customization projects.
  * Ideal class for theme checks.
  *
  * @author Alejandro Mostajo <info@10quality.com>
@@ -47,7 +47,7 @@ class File
     }
 
     /**
-     * Authenticates with wordpress and validates filesystem credentials.
+     * Authenticates with WordPress and validates filesystem credentials.
      * @since 0.9.0
      * @since 0.9.2 Bug fix for when functions are not loaded.
      * @since 0.9.4 Bug fix missing "submit_button".
@@ -194,7 +194,7 @@ class File
     }
 
     /**
-     * Displays wordpress notice.
+     * Displays WordPress notice.
      * @since 0.9.0
      */
     public function admin_notice()
