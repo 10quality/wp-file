@@ -10,20 +10,20 @@ namespace TenQuality\WP;
  * @author Alejandro Mostajo <info@10quality.com>
  * @license MIT
  * @package Wordpress\FileSystem
- * @version 0.9.4
+ * @version 1.0.0
  */
 class File
 {
     /**
      * Flag that indicates whether or not file has been authenticated.
-     * @since 0.9.0
+     * @since 1.0.0
      * @var bool
      */
     protected $authenticated = false;
 
     /**
      * Default constructor.
-     * @since 0.9.0
+     * @since 1.0.0
      */
     public function __construct()
     {
@@ -33,7 +33,7 @@ class File
     /**
      * Returns self | File object with authentication process done.
      * Static constructor.
-     * @since 0.9.0
+     * @since 1.0.0
      *
      * @param string $url Url to authenticate with.
      *
@@ -48,7 +48,7 @@ class File
 
     /**
      * Authenticates with WordPress and validates filesystem credentials.
-     * @since 0.9.0
+     * @since 1.0.0
      * @since 0.9.2 Bug fix for when functions are not loaded.
      * @since 0.9.4 Bug fix missing "submit_button".
      *
@@ -78,7 +78,7 @@ class File
     /**
      * Reads and checks if filename exists.
      * Returns readed file.
-     * @since 0.9.0
+     * @since 1.0.0
      *
      * @global $wp_filesytem
      *
@@ -95,7 +95,7 @@ class File
 
     /**
      * Writes content in a file.
-     * @since 0.9.0
+     * @since 1.0.0
      * @since 0.9.3 Fixes undefined constant FS_CHMOD_FILE.
      *
      * @global $wp_filesytem
@@ -116,7 +116,7 @@ class File
 
     /**
      * Returns flag indicating if path is a directory or not.
-     * @since 0.9.0
+     * @since 1.0.0
      *
      * @global $wp_filesytem
      *
@@ -133,7 +133,7 @@ class File
 
     /**
      * Creates folder path.
-     * @since 0.9.0
+     * @since 1.0.0
      *
      * @global $wp_filesytem
      *
@@ -148,7 +148,7 @@ class File
 
     /**
      * Removes folder path and contents.
-     * @since 0.9.0
+     * @since 1.0.0
      *
      * @global $wp_filesytem
      */
@@ -195,7 +195,7 @@ class File
 
     /**
      * Displays WordPress notice.
-     * @since 0.9.0
+     * @since 1.0.0
      */
     public function admin_notice()
     {

@@ -1,6 +1,7 @@
 <?php
 
 use TenQuality\WP\File;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Tests File functionality.
@@ -8,7 +9,7 @@ use TenQuality\WP\File;
  * @package Ayuco
  * @copyright MIT
  */
-class FileTest extends PHPUnit_Framework_TestCase
+class FileTest extends TestCase
 {
     /**
      * Tests file init.
